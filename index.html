@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parse Logs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+</head>
+<body>
+
+    <main class="container">
+        <h2>Parse Logs</h2>
+        <hr>
+        <form id="logForm">
+            <label for="date">Date:</label><br>
+            <input type="date" id="date" name="date" required><br>
+            <label for="log_data">Log Data:</label><br>
+            <textarea id="log_data" name="log_data" rows="10" cols="30"></textarea><br>
+            <input type="submit" value="Parse Logs">
+        </form>
+        <div id="results" style="color: green"></div>
+        <div id="error" style="color: red"></div>
+    </main>
+    <script>
+        const dateInput = document.querySelector('#date');
+        dateInput.addEventListener('focus', function (event) {
+            this.type = 'date';
+            this.removeEventListener('focus', arguments.callee);
+        });
+    </script>
+    <script src="app.js"></script>
+
+</body>
+</html>
